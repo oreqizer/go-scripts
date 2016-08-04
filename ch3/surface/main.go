@@ -56,6 +56,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func corner(i, j int) (float64, float64) {
 	// Find point (x,y) at corner of cell (i,j).
+	// float64(x)/cells -> position from start in <0,1>
+	// - 0.5            -> the center is x=0,y=0
+	// xyrange *        -> makes it bigger
 	x := xyrange * (float64(i)/cells - 0.5)
 	y := xyrange * (float64(j)/cells - 0.5)
 
